@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- 객체 생성 / 값 초기화 / 객체 조립 모두다 외부 설정파일(= spring beans) 에서 가능함 -->
     <!-- code 변경 없이 DI 를 마음대로 바꿔끼고 조립할 수 있다. -->
 
     <!--Exam exam = new NewlecEcam();-->
-    <bean id="exam" class="spring.di.entity.NewlecEcam">
+    <bean id="exam" class="spring.di.entity.NewlecExam">
 
         <!-- constructor 를 활용한 초기화 -->
         <constructor-arg index="0" value="80" />
@@ -41,6 +41,31 @@
     <!-- setter 를 활용한 DI -->
     <property name="exam" ref="exam"/>
     </bean>
+
+    <bean id="exams" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <bean class="spring.di.entity.NewlecExam">
+                    <constructor-arg index="0" value="80" />
+                    <constructor-arg index="1" value="85" />
+                    <constructor-arg index="2" value="90" />
+                    <constructor-arg index="3" value="95" />
+                </bean>
+                <ref bean="exam"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 실제 객체 생성하는 list -->
+    <util:list id="exams" list-class="java.util.ArrayList">
+        <bean class="spring.di.entity.NewlecExam">
+            <constructor-arg index="0" value="80" />
+            <constructor-arg index="1" value="85" />
+            <constructor-arg index="2" value="90" />
+            <constructor-arg index="3" value="95" />
+        </bean>
+        <ref bean="exam"/>
+    </util:list>
 
 
 </beans>

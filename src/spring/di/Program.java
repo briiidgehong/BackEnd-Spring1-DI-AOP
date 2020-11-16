@@ -3,17 +3,17 @@ package spring.di;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.di.consoleUI.ExamConsole;
-import spring.di.consoleUI.GridExamConsole;
-import spring.di.consoleUI.InlineExamConsole;
 import spring.di.entity.Exam;
-import spring.di.entity.NewlecEcam;
+import spring.di.entity.NewlecExam;
+
+import java.util.ArrayList;
 
 public class Program {
     public static void main(String[] args) {
 
 /* To spring beans
         //Exam exam = new NewlecEcam(10,90,90,85);
-        Exam exam = new NewlecEcam();
+        Exam exam = new NewlecExam();
 
         // Inline 끼웠다가 grid 끼웠다가 식으로
         // 부품 조립 가능함 -> 이 부분을 설정파일(XML, ANNOTATION) 으로 빼주는 것이 SPRING
@@ -35,8 +35,23 @@ public class Program {
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console.print();
 
-        NewlecEcam exam = context.getBean(NewlecEcam.class);
+        NewlecExam exam = context.getBean(NewlecExam.class);
         System.out.println(exam.toString());
 
+/*      To spring beans
+        ArrayList<Exam> exams = new ArrayList<>();
+        exams.add(new NewlecExam(80,85,90,95));
+
+        for(Exam e : exams)
+        {
+            System.out.println(e);
+        }
+*/
+        ArrayList<Exam> exams = (ArrayList<Exam>) context.getBean("exams");
+
+        for(Exam e : exams)
+        {
+            System.out.println("collection"+e);
+        }
     }
 }

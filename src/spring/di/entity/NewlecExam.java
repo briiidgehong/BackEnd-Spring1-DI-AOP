@@ -1,16 +1,16 @@
 package spring.di.entity;
 
-public class NewlecEcam implements Exam {
+public class NewlecExam implements Exam {
 
     private int kor;
     private int eng;
     private int math;
     private int com;
 
-    public NewlecEcam() {
+    public NewlecExam() {
     }
 
-    public NewlecEcam(int kor, int eng, int math, int com) {
+    public NewlecExam(int kor, int eng, int math, int com) {
         this.kor = kor;
         this.eng = eng;
         this.math = math;
