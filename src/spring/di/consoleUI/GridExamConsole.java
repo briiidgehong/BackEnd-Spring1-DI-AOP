@@ -4,8 +4,15 @@ import spring.di.entity.Exam;
 
 public class GridExamConsole implements ExamConsole {
 
+    public GridExamConsole() {
+    }
+
     Exam exam;
     public GridExamConsole(Exam exam) {
+        this.exam = exam;
+    }
+
+    public void setExam(Exam exam) {
         this.exam = exam;
     }
 

@@ -4,9 +4,15 @@ import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
 
-    private Exam exam;
+    public InlineExamConsole() {
+    }
 
+    private Exam exam;
     public InlineExamConsole(Exam exam) {
+        this.exam = exam;
+    }
+
+    public void setExam(Exam exam) {
         this.exam = exam;
     }
 
