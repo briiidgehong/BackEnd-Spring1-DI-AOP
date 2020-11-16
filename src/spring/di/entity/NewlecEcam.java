@@ -7,6 +7,9 @@ public class NewlecEcam implements Exam {
     private int math;
     private int com;
 
+    public NewlecEcam() {
+    }
+
     public NewlecEcam(int kor, int eng, int math, int com) {
         this.kor = kor;
         this.eng = eng;

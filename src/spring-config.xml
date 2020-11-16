@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--Exam exam = new NewlecEcam();-->
+    <bean id="exam" class="spring.di.entity.NewlecEcam"></bean>
+
+    <!--ExamConsole console = new GridExamConsole();-->
+    <!--<bean id="console" class="spring.di.consoleUI.GridExamConsole"> -->
+
+    <!-- program source code의 변화없이 grid -> inline 으로 변경 -->
+    <bean id="console" class="spring.di.consoleUI.InlineExamConsole">
+
+
+    <!--DI : console.setExam(exam);
+            id="SetExam <=> id="exam"-->
+    <property name="exam" ref="exam"/>
+    </bean>
+
 
 </beans>
