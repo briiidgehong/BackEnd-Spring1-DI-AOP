@@ -26,4 +26,30 @@ public class NewlecEcam implements Exam {
     public float avg() {
         return total() / 4.0f;
     }
+
+    public void setKor(int kor) {
+        this.kor = kor;
+    }
+
+    public void setEng(int eng) {
+        this.eng = eng;
+    }
+
+    public void setMath(int math) {
+        this.math = math;
+    }
+
+    public void setCom(int com) {
+        this.com = com;
+    }
+
+    @Override
+    public String toString() {
+        return "NewlecEcam{" +
+                "kor=" + kor +
+                ", eng=" + eng +
+                ", math=" + math +
+                ", com=" + com +
+                '}';
+    }
 }

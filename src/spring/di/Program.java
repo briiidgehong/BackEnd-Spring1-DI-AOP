@@ -34,5 +34,9 @@ public class Program {
 
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console.print();
+
+        NewlecEcam exam = context.getBean(NewlecEcam.class);
+        System.out.println(exam.toString());
+
     }
 }
