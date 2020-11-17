@@ -13,6 +13,7 @@ public class Program {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(DIConfig.class);
+                                     new ClassPathXmlApplicationContext("spring/di/spring-config.xml");
         //data type으로 bean 가져오기
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console2.print();
