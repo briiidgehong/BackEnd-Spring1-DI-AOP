@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 객체 생성 / 값 초기화 / 객체 조립 모두다 외부 설정파일(= spring beans) 에서 가능함 -->
     <!-- code 변경 없이 DI 를 마음대로 바꿔끼고 조립할 수 있다. -->
 
-
+<context:annotation-config/>
 <!-- 일반 data type -->
     <bean id="exam" class="spring.di.entity.NewlecExam">
         <!-- constructor 를 활용한 초기화
@@ -23,8 +24,7 @@
     </bean>
 
     <bean id="console" class="spring.di.consoleUI.InlineExamConsole">
-    <!-- setter 를 활용한 DI (id="SetExam <=> id="exam") -->
-    <property name="exam" ref="exam"/>
+
     </bean>
 
 

@@ -31,16 +31,16 @@ public class Program {
 */
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
-        //이름으로 bran 가져오기
+        //이름으로 bean 가져오기
         ExamConsole console = (ExamConsole)context.getBean("console");
         console.print();
-
+/*
         //data type으로 bean 가져오기
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console.print();
         NewlecExam exam = context.getBean(NewlecExam.class);
         System.out.println(exam.toString());
-
+*/
 
 //collections
 /*      To spring beans

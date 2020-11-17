@@ -1,5 +1,6 @@
 package spring.di.consoleUI;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
@@ -12,6 +13,8 @@ public class InlineExamConsole implements ExamConsole {
         this.exam = exam;
     }
 
+    @Autowired
+    @Override
     public void setExam(Exam exam) {
         this.exam = exam;
     }
