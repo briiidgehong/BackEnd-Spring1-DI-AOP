@@ -2,11 +2,14 @@ package spring.di.consoleUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import spring.di.entity.Exam;
 
+@Component
+// or @Component("console")
 public class InlineExamConsole implements ExamConsole {
 
-    // @Autowired(required = false)
+    @Autowired(required = false)
     // required option: 꼭 bean 이 생성 안되어 있어도 됨
     // 생성되어있으면 DI / 없으면 DI 안함
 
@@ -29,8 +32,8 @@ public class InlineExamConsole implements ExamConsole {
 
 
     // setter 에서 바인딩
-    @Autowired
-    @Qualifier("exam1")
+    // @Autowired
+    //@Qualifier("exam")
     @Override
     public void setExam(Exam exam) {
         System.out.println("setter 바인딩");

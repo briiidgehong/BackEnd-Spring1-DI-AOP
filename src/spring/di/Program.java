@@ -30,17 +30,17 @@ public class Program {
         console.setExam(exam);
 */
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-
+/*
         //이름으로 bean 가져오기
         ExamConsole console = (ExamConsole)context.getBean("console");
         console.print();
-/*
+*/
         //data type으로 bean 가져오기
         ExamConsole console2 = context.getBean(ExamConsole.class);
-        console.print();
+        console2.print();
         NewlecExam exam = context.getBean(NewlecExam.class);
         System.out.println(exam.toString());
-*/
+
 
 //collections
 /*      To spring beans
@@ -52,11 +52,15 @@ public class Program {
             System.out.println(e);
         }
 */
-
+/*
         ArrayList<Exam> exams = (ArrayList<Exam>) context.getBean("exams");
         for(Exam e : exams)
         {
             System.out.println("collection"+e);
         }
+
+ */
     }
+
+
 }

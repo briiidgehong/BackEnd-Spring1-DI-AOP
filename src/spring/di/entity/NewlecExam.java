@@ -1,8 +1,16 @@
 package spring.di.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class NewlecExam implements Exam {
 
+    @Autowired(required = false)
+    @Value("80")
     private int kor;
+    @Value("100")
     private int eng;
     private int math;
     private int com;
