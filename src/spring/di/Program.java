@@ -1,6 +1,7 @@
 package spring.di;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.di.consoleUI.ExamConsole;
 import spring.di.entity.Exam;
@@ -29,12 +30,13 @@ public class Program {
         ExamConsole console = new GridExamConsole();
         console.setExam(exam);
 */
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 /*
         //이름으로 bean 가져오기
         ExamConsole console = (ExamConsole)context.getBean("console");
         console.print();
 */
+        ApplicationContext context = new AnnotationConfigApplicationContext(DIConfig.class);
         //data type으로 bean 가져오기
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console2.print();
