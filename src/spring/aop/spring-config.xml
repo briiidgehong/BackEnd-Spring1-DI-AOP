@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="target" class="spring.aop.entity.NewlecExam">
-        <property name="kor" value="60" />
+        <property name="kor" value="120" />
         <property name="eng" value="65" />
         <property name="math" value="70" />
         <property name="com" value="75" />
@@ -14,6 +14,7 @@
     <bean id="logAroundAdvice" class="spring.aop.advice.LogAroundAdvice" />
     <bean id="logBeforeAdvice" class="spring.aop.advice.LogBeforeAdvice" />
     <bean id="logAfterReturningAdvice" class="spring.aop.advice.LogAfterReturningAdvice" />
+    <bean id="logAfterThrowingAdvice" class="spring.aop.advice.LogAfterThrowingAdvice" />
 
 
 
@@ -24,7 +25,9 @@
             <list>
                 <!--<value>logAroundAdvice</value>-->
                 <!--<value>logBeforeAdvice</value>-->
-                <value>logAfterReturningAdvice</value>
+                <!--<value>logAfterReturningAdvice</value>-->
+                <value>logAfterThrowingAdvice</value>
+
             </list>
         </property>
     </bean>
