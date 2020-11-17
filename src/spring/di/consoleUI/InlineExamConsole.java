@@ -9,7 +9,7 @@ import spring.di.entity.Exam;
 // or @Component("console")
 public class InlineExamConsole implements ExamConsole {
 
-    @Autowired(required = false)
+
     // required option: 꼭 bean 이 생성 안되어 있어도 됨
     // 생성되어있으면 DI / 없으면 DI 안함
 

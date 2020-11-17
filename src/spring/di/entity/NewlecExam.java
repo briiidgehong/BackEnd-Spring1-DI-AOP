@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 public class NewlecExam implements Exam {
 
-    @Autowired(required = false)
     @Value("80")
     private int kor;
     @Value("100")
