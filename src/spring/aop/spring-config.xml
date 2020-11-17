@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="target" class="spring.aop.entity.NewlecExam">
-        <property name="kor" value="120" />
+        <property name="kor" value="90" />
         <property name="eng" value="65" />
         <property name="math" value="70" />
         <property name="com" value="75" />
@@ -16,8 +16,15 @@
     <bean id="logAfterReturningAdvice" class="spring.aop.advice.LogAfterReturningAdvice" />
     <bean id="logAfterThrowingAdvice" class="spring.aop.advice.LogAfterThrowingAdvice" />
 
+    <bean id="classicPointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+        <property name="mappedName" value="total"/>
+    </bean>
 
-
+    <bean id="classicBeforeAdvice"
+          class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="advice" ref="logBeforeAdvice"></property>
+        <property name="pointcut" ref="classicPointCut"></property>
+    </bean>
 
     <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="target" /> <!-- name : setTarget() -->
@@ -26,7 +33,8 @@
                 <!--<value>logAroundAdvice</value>-->
                 <!--<value>logBeforeAdvice</value>-->
                 <!--<value>logAfterReturningAdvice</value>-->
-                <value>logAfterThrowingAdvice</value>
+                <!--<value>logAfterThrowingAdvice</value>-->
+                <value>classicBeforeAdvice</value>
 
             </list>
         </property>
