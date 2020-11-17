@@ -39,7 +39,7 @@
                     <constructor-arg index="2" value="90" />
                     <constructor-arg index="3" value="95" />
                 </bean>
-                <ref bean="exam"/>
+                <ref bean="exam1"/>
             </list>
         </constructor-arg>
     </bean>
