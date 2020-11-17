@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Program {
     public static void main(String[] args) {
 
+//일반 data type
 /* To spring beans
         //Exam exam = new NewlecEcam(10,90,90,85);
         Exam exam = new NewlecExam();
@@ -29,15 +30,19 @@ public class Program {
         console.setExam(exam);
 */
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+
+        //이름으로 bran 가져오기
         ExamConsole console = (ExamConsole)context.getBean("console");
         console.print();
 
+        //data type으로 bean 가져오기
         ExamConsole console2 = context.getBean(ExamConsole.class);
         console.print();
-
         NewlecExam exam = context.getBean(NewlecExam.class);
         System.out.println(exam.toString());
 
+
+//collections
 /*      To spring beans
         ArrayList<Exam> exams = new ArrayList<>();
         exams.add(new NewlecExam(80,85,90,95));
@@ -47,8 +52,8 @@ public class Program {
             System.out.println(e);
         }
 */
-        ArrayList<Exam> exams = (ArrayList<Exam>) context.getBean("exams");
 
+        ArrayList<Exam> exams = (ArrayList<Exam>) context.getBean("exams");
         for(Exam e : exams)
         {
             System.out.println("collection"+e);

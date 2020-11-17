@@ -6,16 +6,10 @@
     <!-- 객체 생성 / 값 초기화 / 객체 조립 모두다 외부 설정파일(= spring beans) 에서 가능함 -->
     <!-- code 변경 없이 DI 를 마음대로 바꿔끼고 조립할 수 있다. -->
 
-    <!--Exam exam = new NewlecEcam();-->
+
+<!-- 일반 data type -->
     <bean id="exam" class="spring.di.entity.NewlecExam">
-
-        <!-- constructor 를 활용한 초기화 -->
-        <constructor-arg index="0" value="80" />
-        <constructor-arg index="1" value="85" />
-        <constructor-arg index="2" value="90" />
-        <constructor-arg index="3" value="95" />
-
-        <!-- constructor 를 활용한 초기화2
+        <!-- constructor 를 활용한 초기화
         <constructor-arg name="kor" type="int" value="80" />
         <constructor-arg name="eng" type="int"  value="85" />
         <constructor-arg name="math" type="int"  value="90" />
@@ -26,22 +20,16 @@
         <property name="eng" value="90" />
         <property name="math" value="80" />
         <property name="com" value="90" />
-
     </bean>
 
-    <!--ExamConsole console = new GridExamConsole();-->
-    <!--<bean id="console" class="spring.di.consoleUI.GridExamConsole"> -->
-
-    <!-- program source code의 변화없이 grid -> inline 으로 변경 -->
     <bean id="console" class="spring.di.consoleUI.InlineExamConsole">
-
-
-    <!--DI : console.setExam(exam);
-            id="SetExam <=> id="exam"-->
-    <!-- setter 를 활용한 DI -->
+    <!-- setter 를 활용한 DI (id="SetExam <=> id="exam") -->
     <property name="exam" ref="exam"/>
     </bean>
 
+
+
+<!-- collections -->
     <bean id="exams" class="java.util.ArrayList">
         <constructor-arg>
             <list>
@@ -55,17 +43,4 @@
             </list>
         </constructor-arg>
     </bean>
-
-    <!-- 실제 객체 생성하는 list -->
-    <util:list id="exams" list-class="java.util.ArrayList">
-        <bean class="spring.di.entity.NewlecExam">
-            <constructor-arg index="0" value="80" />
-            <constructor-arg index="1" value="85" />
-            <constructor-arg index="2" value="90" />
-            <constructor-arg index="3" value="95" />
-        </bean>
-        <ref bean="exam"/>
-    </util:list>
-
-
 </beans>
