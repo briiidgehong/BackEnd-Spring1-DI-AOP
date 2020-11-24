@@ -1,4 +1,4 @@
-# BackEnd-Spring1-DI-AOP 편 -> 완료
+# BackEnd-Spring1-DI-AOP -> 완료
 
 Spring1 편의 개발환경은 다음과 같습니다. 
 * IDE : IntelliJ IDEA
@@ -31,4 +31,4 @@ Spring1 편의 개발환경은 다음과 같습니다.
 [pointcut 2: merge pointcut advice(advice implied pointcut)](https://github.com/mangozzelli/BackEnd-Spring1-DI-AOP/commit/8231a69bb171bc9eda9bb3bfa00a0dad2aef53ae)    
 
 
-## 다음 시리즈 - SPRING2-SPRING-MVC 🌱
+##### NEXT - SPRING2-SPRING-MVC 🌱
