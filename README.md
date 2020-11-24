@@ -10,7 +10,7 @@ Spring1 편의 개발환경은 다음과 같습니다.
 
 ※ 출처: 이 정리는 youtube newLecture 님의 강좌를 기반으로 작성되었습니다.
 
-## 주요 commmit 내역☑️
+## 주요 commit 내역☑️
 ### 1. DI Using XML(spring-config.xml)     
 [DI example code without Spring](https://github.com/mangozzelli/BackEnd-Spring1-DI-AOP/commit/f1f918ee8bdf496c2430d3caf620dcaa9392f9d5)    
 [DI using spring beans](https://github.com/mangozzelli/BackEnd-Spring1-DI-AOP/commit/e7bbf9b4233cc69a8963773fcab220334ded3a5d)    
