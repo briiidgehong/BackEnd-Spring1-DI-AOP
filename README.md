@@ -1,6 +1,5 @@
 # BackEnd-Spring1-DI-AOP -> 완료
-
-Spring1 편의 개발환경은 다음과 같습니다. 
+개발환경 :
 * IDE : IntelliJ IDEA
 * Git Tools : GitHub Desktop
 * OS : Window 10
@@ -8,7 +7,7 @@ Spring1 편의 개발환경은 다음과 같습니다.
 * Tomcat 9
 * spring framework(library: spring-5.2.3.release)
 
-※ 출처: 이 정리는 newLecture 강좌를 기반으로 작성되었습니다.
+※ 이 정리는 newLecture 강좌를 기반으로 작성되었습니다.
 
 ## 주요 commit 내역☑️
 ### 1. DI Using XML(spring-config.xml)     
