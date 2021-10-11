@@ -1,4 +1,4 @@
-# BackEnd-Spring1-DI-AOP -> 완료
+# Java-Spring1-DI-AOP -> 완료
 개발환경 :
 * IDE : IntelliJ IDEA
 * Git Tools : GitHub Desktop
@@ -7,7 +7,7 @@
 * Tomcat 9
 * spring framework(library: spring-5.2.3.release)
 
-※ 이 정리는 newLecture 강좌를 기반으로 작성되었습니다.
+※ 이 정리는 newLecture 유튜브 채널 강좌를 참조해 작성되었습니다.
 
 ## 주요 commit 내역☑️
 ### 1. DI Using XML(spring-config.xml)     
