@@ -7,8 +7,6 @@
 * Tomcat 9
 * spring framework(library: spring-5.2.3.release)
 
-※ 이 정리는 newLecture 유튜브 채널 강좌를 참조해 작성되었습니다.
-
 ## 주요 commit 내역☑️
 ### 1. DI Using XML(spring-config.xml)     
 [DI example code without Spring](https://github.com/mangozzelli/BackEnd-Spring1-DI-AOP/commit/f1f918ee8bdf496c2430d3caf620dcaa9392f9d5)    
